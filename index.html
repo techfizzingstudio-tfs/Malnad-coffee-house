@@ -1,586 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malnad Coffee House</title>
-    <link rel="icon" type="image/png" href="img/logo.jpeg">
-     <link rel="stylesheet" href="style.css" />
-     <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
-     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Malnad Coffee House — B2B Coffee Supply</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --bg:#0a0a0a;
+      --card:#111111;
+      --gold:#c9a66b;
+      --gold-light:#e4c48f;
+      --text:#ffffff;
+      --muted:#9f9f9f;
+      --line:rgba(255,255,255,.08);
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+      background:
+      radial-gradient(circle at top left, rgba(201,166,107,.12), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(201,166,107,.08), transparent 30%),
+      #0a0a0a;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)),
+      url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1800&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      opacity:.45;
+      transform:scale(1.05);
+    }
+
+    .container{
+      width:100%;
+      max-width:1320px;
+      position:relative;
+      z-index:2;
+    }
+
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:70px;
+    }
+
+    .logo{
+      font-family:'Playfair Display',serif;
+      font-size:32px;
+      font-weight:700;
+      letter-spacing:.5px;
+    }
+
+    .logo span{
+      color:var(--gold);
+    }
+
+    .nav-btn{
+      text-decoration:none;
+      color:#111;
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      padding:14px 24px;
+      border-radius:14px;
+      font-weight:600;
+      transition:.3s ease;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(201,166,107,.25);
+      background:rgba(201,166,107,.08);
+      color:var(--gold);
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:28px;
+    }
+
+    h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(58px,8vw,105px);
+      line-height:.95;
+      margin-bottom:28px;
+      letter-spacing:-2px;
+    }
+
+    h1 span{
+      color:var(--gold);
+    }
+
+    .subtitle{
+      font-size:18px;
+      line-height:1.9;
+      color:var(--muted);
+      max-width:720px;
+      margin-bottom:40px;
+    }
+
+    .highlights{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-bottom:40px;
+    }
+
+    .highlight{
+      padding:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      backdrop-filter:blur(10px);
+    }
+
+    .highlight h3{
+      color:var(--gold);
+      font-size:16px;
+      margin-bottom:8px;
+    }
+
+    .highlight p{
+      color:#bcbcbc;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .cta-group{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-bottom:36px;
+    }
+
+    .btn{
+      text-decoration:none;
+      padding:18px 30px;
+      border-radius:16px;
+      font-weight:600;
+      transition:.35s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      color:#111;
+      box-shadow:0 10px 30px rgba(201,166,107,.22);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--line);
+      color:#fff;
+      background:rgba(255,255,255,.03);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .email-box{
+      display:flex;
+      overflow:hidden;
+      border-radius:18px;
+      max-width:620px;
+      background:#fff;
+      margin-bottom:16px;
+    }
+
+    .email-box input{
+      flex:1;
+      border:none;
+      outline:none;
+      padding:22px;
+      font-size:15px;
+    }
+
+    .email-box button{
+      border:none;
+      background:#111;
+      color:#fff;
+      padding:0 30px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s ease;
+    }
+
+    .email-box button:hover{
+      background:var(--gold);
+      color:#111;
+    }
+
+    .small{
+      color:#8d8d8d;
+      font-size:14px;
+    }
+
+    .right-card{
+      position:relative;
+      border-radius:34px;
+      overflow:hidden;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      min-height:720px;
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
+    }
+
+    .right-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.72);
+    }
+
+    .floating-panel{
+      position:absolute;
+      left:30px;
+      right:30px;
+      bottom:30px;
+      padding:28px;
+      border-radius:28px;
+      background:rgba(0,0,0,.5);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(16px);
+    }
+
+    .floating-panel h2{
+      margin-bottom:14px;
+      font-size:28px;
+    }
+
+    .floating-panel p{
+      color:#cfcfcf;
+      line-height:1.8;
+      margin-bottom:24px;
+    }
+
+    .stats{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .stat{
+      flex:1;
+      min-width:120px;
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .stat h3{
+      color:var(--gold);
+      font-size:28px;
+      margin-bottom:6px;
+    }
+
+    .stat p{
+      color:#b9b9b9;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    @media(max-width:1100px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .right-card{
+        min-height:500px;
+      }
+
+      h1{
+        font-size:72px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        padding:24px;
+      }
+
+      .highlights{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:54px;
+      }
+
+      .email-box{
+        flex-direction:column;
+      }
+
+      .email-box button{
+        padding:20px;
+      }
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .right-card{
+        min-height:420px;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-<header class="navbar">
-  <div class="nav-container">
-
-    <!-- ✅ FIXED WRAPPER -->
-    <div class="brand">
-      <img src="img/malnad_coffee_house_transparent.png" class="logo" alt="Malnad coffee house">
-      
-      <div class="brand-text">
-        <h1>Malnad Coffee House<span class="tm">™</span></h1>
-        <p>A Unit of MNZ Ventures Pvt. Ltd.</p>
-      </div>
-    </div>
-
-    <div class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="coming.html">Bakhoor</a></li>
-      <li><a href="gifts.html">Gift Collection</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-  </div>
-</header>
-
-<!-- ================= HERO SLIDER ================= -->
 <section class="hero">
-  <div class="slides">
 
-    <div class="slide active slide-1">
-      <div class="hero-content">
-        <h1>From the Hills of Malnad</h1>
-          <div class="hero-divider"> 
-            <p>Handpicked coffee cherries from the misty Western Ghats, grown with care and tradition.</p>
-          </div>
-        <a href="#feature" class="hero-btn">Explore Collection</a>
-        <a href="#feature" class="hero-btn">Explore Origin</a>
+  <div class="container">
+
+    <div class="navbar">
+
+      <div class="logo">
+        Malnad <span>Coffee House</span>
       </div>
+
+      
+      <a
+  href="https://wa.me/9844330767?text=Hello%20Malnad%20Coffee%20House%2C%20I%20am%20interested%20in%20a%20business%20partnership."
+  class="nav-btn"
+  target="_blank"
+>
+  Become a Partner
+</a>
+
     </div>
 
-    <div class="slide slide-2">
-      <div class="hero-content">
-        <h1>Perfectly Roasted</h1>
-         <div class="hero-divider"> 
-            <p>Small-batch roasting that unlocks deep aroma, bold flavor, and rich character.</p>
-          </div>
-        <a href="#feature" class="hero-btn">Explore Collection</a>
-        <a href="#feature" class="hero-btn">View Blends</a>
-      </div>
-    </div>
+    <div class="hero-grid">
 
-    <div class="slide slide-3">
-      <div class="hero-content">
-        <h1>Brewed to Perfection</h1>
-         <div class="hero-divider"> 
-            <p>From bean to cup — a smooth, flavorful experience in every sip.</p>
-          </div>
-        <a href="#feature" class="hero-btn">Explore Collection</a>
-        <a href="#feature" class="hero-btn">Shop Coffee</a>
-      </div>
-    </div>
+      <div class="left">
 
-  </div>
-</section>
-
-
-<section class="story-section">
-
-    <div class="blur-circle blur-1"></div>
-    <div class="blur-circle blur-2"></div>
-
-    <div class="story-wrapper">
-
-      <!-- IMAGE -->
-        <div class="story-image reveal">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop" alt="Coffee">
-
-            <div class="years-card">
-                <h2>25+</h2>
-                <span>
-                    Years roasting<br>
-                    heritage
-                </span>
-            </div>
+        <div class="tag">
+          ✦ Premium B2B Coffee Supply • Launching Soon
         </div>
 
-        <!-- CONTENT -->
-        <div class="story-content reveal">
+        <h1>
+          Coffee Built for <span>Hotels, Cafés & Businesses</span>
+        </h1>
 
-            <div class="story-tag">
-                OUR STORY
-            </div>
+        <p class="subtitle">
+          Malnad Coffee House delivers premium Chikkamagaluru coffee
+          solutions for cafés, restaurants, hotels, offices, and retail partners.
+          Consistent quality, wholesale pricing, and reliable sourcing —
+          directly from the hills of Karnataka.
+        </p>
 
-            <h1>
-                Heritage roasted into every bean we ship.
-            </h1>
+        <div class="highlights">
+
+          <div class="highlight">
+            <h3>Wholesale Supply</h3>
+            <p>
+              Freshly roasted coffee beans and blends for commercial businesses.
+            </p>
+          </div>
+
+          <div class="highlight">
+            <h3>Private Labeling</h3>
+            <p>
+              Launch your own coffee brand with custom packaging solutions.
+            </p>
+          </div>
+
+          <div class="highlight">
+            <h3>Bulk Orders</h3>
+            <p>
+              Reliable logistics and scalable supply for growing businesses.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="cta-group">
+
+          <a
+  href="https://wa.me/9844330767?text=Hello%20Malnad%20Coffee%20House%2C%20I%20would%20like%20to%20request%20a%20partnership."
+  class="btn btn-primary"
+  target="_blank"
+>
+  Request Partnership →
+</a>
+        </div>
+
+        </form>
+
+        <div class="small">
+          Early partner onboarding for cafés, hotels & distributors now open.
+        </div>
+
+      </div>
+
+      <div class="right">
+
+        <div class="right-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop"
+            alt="Coffee Beans">
+
+          <div class="floating-panel">
+
+            <h2>Launching Soon</h2>
 
             <p>
-                Born in the misty hills of Chikmagalur — India's coffee
-                heartland — Malnad Coffee House is a unit of MNZ Ventures Pvt Ltd.
-                We partner directly with estate farmers, roast in small
-                consistent batches, and supply at scale to cafés, QSR chains,
-                and private labels.
+              Building premium coffee partnerships across India with authentic
+              Malnad-origin coffee sourced from Chikkamagaluru estates.
             </p>
 
-            <p>
-                Our promise is simple: traceable origin, repeatable roast,
-                reliable supply.
-            </p>
+            <div class="stats">
 
-            <a href="#" class="story-btn">
-                Discover our journey
-            </a>
+              <div class="stat">
+                <h3>100%</h3>
+                <p>Arabica</p>
+              </div>
 
-        </div>
+              <div class="stat">
+                <h3>B2B</h3>
+                <p>Focused</p>
+              </div>
 
-    </div>
+              <div class="stat">
+                <h3>24/7</h3>
+                <p>Support</p>
+              </div>
 
-</section>
+            </div>
 
-<!-- =========================
-     PRODUCTS SECTION
-========================= -->
-
-<section class="products-section">
-
-  <!-- TOP CONTENT -->
-  <div class="products-top reveal">
-
-    <span class="products-tag">
-      WHAT WE SUPPLY
-    </span>
-
-    <h2>
-      A curated wholesale catalogue,
-      <span>built for scale.</span>
-    </h2>
-
-    <p>
-      From green beans to ready-to-brew espresso blends — every product is
-      sample-tested, batch-tracked, and shipped fast.
-    </p>
-
-  </div>
-
-  <!-- CARDS -->
-  <div class="products-grid">
-
-    <!-- CARD 1 -->
-    <div class="product-card reveal">
-
-      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop" alt="Roasted Coffee Beans">
-
-      <div class="product-overlay"></div>
-
-      <div class="product-content">
-        <h3>Roasted Coffee Beans</h3>
-
-        <p>
-          Single-origin & estate roasts. Light to dark profiles, packed fresh.
-        </p>
-
-        <a href="#">
-          Explore range →
-        </a>
-      </div>
-
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="product-card reveal">
-
-      <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop" alt="Speciality Coffee">
-
-      <div class="product-overlay"></div>
-
-      <div class="product-content">
-        <h3>Speciality Coffee</h3>
-
-        <p>
-          Cup-scored 84+. Micro-lots curated for premium menus.
-        </p>
-
-        <a href="#">
-          Explore range →
-        </a>
-      </div>
-
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="product-card reveal">
-
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop" alt="Green Coffee Beans">
-
-      <div class="product-overlay"></div>
-
-      <div class="product-content">
-        <h3>Green Coffee Beans</h3>
-
-        <p>
-          Unroasted Arabica & Robusta in jute bags. Container-load ready.
-        </p>
-
-        <a href="#">
-          Explore range →
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ============ WHY CHOOSE US  ================ -->
-
-<section class="why-section">
-
-  <div class="why-top reveal">
-
-    <span class="why-tag">
-      WHY WE'RE CHOSEN
-    </span>
-
-    <h2>
-      Built for businesses that
-      <span>can't compromise.</span>
-    </h2>
-
-  </div>
-
-  <!-- CARDS -->
-
-  <div class="why-grid">
-
-    <!-- CARD 1 -->
-    <div class="why-card reveal">
-
-      <div class="why-icon">
-        🛡
-      </div>
-
-      <h3>Direct from Origin</h3>
-
-      <p>
-        Estate-to-warehouse traceability. No middlemen,
-        no markups, no surprises.
-      </p>
-
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="why-card reveal">
-
-      <div class="why-icon">
-        ☰
-      </div>
-
-      <h3>Consistent Roast</h3>
-
-      <p>
-        SOP-driven roast profiles ensure your espresso
-        tastes the same every Monday.
-      </p>
-
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="why-card reveal">
-
-      <div class="why-icon">
-        ◷
-      </div>
-
-      <h3>On-Time Dispatch</h3>
-
-      <p>
-        48-hour roast-to-ship turnaround.
-        Pan-India logistics, container-grade exports.
-      </p>
-
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="why-card reveal">
-
-      <div class="why-icon">
-        ✓
-      </div>
-
-      <h3>Private Labelling</h3>
-
-      <p>
-        Launch your own coffee brand in 30 days —
-        packaging, blending, compliance, all in.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =========================
-     PROCESS SECTION
-========================= -->
-
-<section class="process-section">
-
-  <!-- TOP -->
-  <div class="process-top reveal">
-
-    <span class="process-tag">
-      BEAN TO BUSINESS
-    </span>
-
-    <h2>
-      Farm → Roast → Supply.
-    </h2>
-
-    <p>
-      A four-step pipeline engineered for quality at scale.
-    </p>
-
-  </div>
-
-  <!-- TIMELINE -->
-  <div class="process-line"></div>
-
-  <div class="process-grid">
-
-    <!-- STEP 1 -->
-    <div class="process-card reveal">
-
-      <div class="process-number">01</div>
-
-      <h3>Estate Sourcing</h3>
-
-      <p>
-        Hand-picked from Chikmagalur and Coorg estates
-        we know by name.
-      </p>
-
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="process-card reveal">
-
-      <div class="process-number">02</div>
-
-      <h3>Cup-Scored QC</h3>
-
-      <p>
-        Every lot graded by Q-trained tasters before it
-        enters the roastery.
-      </p>
-
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="process-card reveal">
-
-      <div class="process-number">03</div>
-
-      <h3>Precision Roast</h3>
-
-      <p>
-        Profile-locked curves. Same flavour,
-        batch after batch, year after year.
-      </p>
-
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="process-card reveal">
-
-      <div class="process-number">04</div>
-
-      <h3>Bulk Dispatch</h3>
-
-      <p>
-        Vacuum-sealed, GST-compliant, shipped
-        in 48 hours nationwide.
-      </p>
-
-    </div>
-
-  </div>
-
-  <!-- STATS -->
-
-
-<div class="stats-grid reveal">
-
-  <div class="stat-box">
-    <h3>
-      <span class="counter" data-target="500">0</span><span>+</span>
-    </h3>
-    <p>ACTIVE B2B ACCOUNTS</p>
-  </div>
-
-  <div class="stat-box">
-    <h3>
-      <span class="counter" data-target="900">0</span><span>.kg</span>
-    </h3>
-    <p>ANNUAL CAPACITY</p>
-  </div>
-
-  <div class="stat-box">
-    <h3>
-      <span class="counter" data-target="48">0</span><span>h</span>
-    </h3>
-    <p>ROAST-TO-SHIP</p>
-  </div>
-
-  <div class="stat-box">
-    <h3>
-      <span class="counter" data-target="98">0</span><span>%</span>
-    </h3>
-    <p>REPEAT ORDERS</p>
-  </div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     TESTIMONIAL SECTION
-========================= -->
-
-<section class="testimonial-section">
-
-  <!-- TOP -->
-  <div class="testimonial-top reveal">
-
-    <span class="testimonial-tag">
-      WORD FROM THE TRADE
-    </span>
-
-    <h2>
-      Cafés and brands building
-      <span>on us.</span>
-    </h2>
-
-  </div>
-
-  <!-- SLIDER -->
-
-  <div class="testimonial-slider">
-
-    <div class="testimonial-track">
-
-      <!-- CARD 1 -->
-      <div class="testimonial-card">
-
-        <div class="quote">“</div>
-
-        <p>
-          Their espresso blend is the backbone of our menu.
-          Same cup quality across 14 outlets — no bean drift, ever.
-        </p>
-
-        <div class="testimonial-user">
-
-          <div class="user-icon">A</div>
-
-          <div class="user-info">
-            <h4>Arjun Reddy</h4>
-            <span>Owner · Brewbar Coffee, Hyderabad</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="testimonial-card">
-
-        <div class="quote">“</div>
-
-        <p>
-          Switched to Malnad for our private label two years back.
-          Cleaner sourcing, faster turnarounds, real partnership.
-        </p>
-
-        <div class="testimonial-user">
-
-          <div class="user-icon">P</div>
-
-          <div class="user-info">
-            <h4>Priya Menon</h4>
-            <span>Founder · Kettle & Co</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="testimonial-card">
-
-        <div class="quote">“</div>
-
-        <p>
-          Container-load Robusta exports — paperwork,
-          packaging and consistency, all sorted.
-          Easiest supplier we've onboarded.
-        </p>
-
-        <div class="testimonial-user">
-
-          <div class="user-icon">R</div>
-
-          <div class="user-info">
-            <h4>Rohan Sharma</h4>
-            <span>Director · Ostrich Trading FZE</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- DUPLICATES FOR LOOP -->
-
-      <div class="testimonial-card">
-
-        <div class="quote">“</div>
-
-        <p>
-          Their espresso blend is the backbone of our menu.
-          Same cup quality across 14 outlets — no bean drift, ever.
-        </p>
-
-        <div class="testimonial-user">
-
-          <div class="user-icon">A</div>
-
-          <div class="user-info">
-            <h4>Arjun Reddy</h4>
-            <span>Owner · Brewbar Coffee, Hyderabad</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="testimonial-card">
-
-        <div class="quote">“</div>
-
-        <p>
-          Switched to Malnad for our private label two years back.
-          Cleaner sourcing, faster turnarounds, real partnership.
-        </p>
-
-        <div class="testimonial-user">
-
-          <div class="user-icon"></div>
-
-          <div class="user-info">
-            <h4>Priya Menon</h4>
-            <span>Founder · Kettle & Co</span>
           </div>
 
         </div>
@@ -593,172 +498,5 @@
 
 </section>
 
-
-
-<!-- Premium Coffee Wholesale Section -->
-<section class="premium-section">
-  <div class="premium-container">
-
-    <!-- Left Content -->
-    <div class="premium-content">
-      <span class="premium-tag">
-        BUILD YOUR COFFEE BUSINESS
-      </span>
-
-      <h1>
-        Talk to our wholesale <br />
-        desk in <span>under 60 seconds.</span>
-      </h1>
-
-      <p>
-        Share your monthly volume, city and product type —
-        we'll send a customised quote within the hour.
-      </p>
-
-      <div class="premium-buttons">
-        <a href="#" class="btn-primary">Chat on WhatsApp</a>
-        <a href="#" class="btn-secondary">Send Inquiry</a>
-      </div>
-    </div>
-
-    <!-- Right Image -->
-    <div class="premium-image">
-      <img src="img/ante-samarzija-lsmu0rUhUOk-unsplash.jpg" alt="Coffee Cup" />
-    </div>
-
-  </div>
-</section>
-
-
-<!-- =========================
-     PREMIUM FOOTER
-========================= -->
-
-<footer class="footer">
-
-  <!-- TOP -->
-
-  <div class="footer-top reveal">
-
-    <div class="footer-brand">
-
-      <h2>Malnad Coffee House</h2>
-
-      <p>
-        From Chikmagalur estates to cafés, hotels,
-        QSR chains and global private labels —
-        roasted for consistency at scale.
-      </p>
-
-      <a href="#" class="footer-btn">
-        Become a Partner
-      </a>
-
-    </div>
-
-    <!-- LINKS -->
-
-    <div class="footer-links">
-
-      <!-- COL -->
-      <div class="footer-col">
-
-        <h3>Company</h3>
-
-        <a href="#">About</a>
-        <a href="#">Our Story</a>
-        <a href="#">Supply Chain</a>
-        <a href="#">Contact</a>
-
-      </div>
-
-      <!-- COL -->
-      <div class="footer-col">
-
-        <h3>Products</h3>
-
-        <a href="#">Roasted Beans</a>
-        <a href="#">Green Coffee</a>
-        <a href="#">Private Label</a>
-        <a href="#">Bulk Supply</a>
-
-      </div>
-
-      <!-- COL -->
-      <div class="footer-col">
-
-        <h3>Contact</h3>
-
-        <a href="#">hello@malnadcoffee.com</a>
-        <a href="#">+91 98765 43210</a>
-        <a href="#">Hyderabad, India</a>
-
-      </div>
-
-    </div>
-    
-  </div>
-
-    <!-- =========  FOOTER MAP  ========== -->
-
-<div class="footer-map">
-
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18..."
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-
-</div>
-
-  <!-- DIVIDER -->
-
-  <div class="footer-line"></div>
-
-  <!-- BOTTOM -->
-
-  <!-- =========================
-     FOOTER SOCIALS
-========================= -->
-
-<div class="footer-bottom">
-
-  <p>
-    © 2026 Malnad Coffee House. All rights reserved.
-    <span class="managed">
-      Managed by <strong>Fizzing Studio</strong>
-    </span>
-  </p>
-
-  <!-- SOCIAL ICONS -->
-
-  <div class="footer-socials">
-
-    <a href="#" class="social-link">
-      <i class="ri-instagram-line"></i>
-    </a>
-
-    <a href="#" class="social-link">
-      <i class="ri-linkedin-fill"></i>
-    </a>
-
-    <a href="#" class="social-link">
-      <i class="ri-facebook-fill"></i>
-    </a>
-
-    <a href="#" class="social-link">
-      <i class="ri-twitter-x-line"></i>
-    </a>
-
-  </div>
-
-</div>
-
-</footer>
-
-
-
-<script src="script.js"></script>
 </body>
 </html>
