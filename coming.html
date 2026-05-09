@@ -1,208 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malnad Coffee House</title>
- <link rel="icon" type="image/png" href="img/WhatsApp Image 2026-04-25 at 22.27.16.jpeg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Updated Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Malnad Coffee House — B2B Coffee Supply</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body{
-  background:#f0eded;
-  color:#fff;
-  overflow-x:hidden;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-  background:linear-gradient(rgba(255, 244, 244, 0.6),rgba(0,0,0,.85)),
-  url('img/ante-samarzija-lsmu0rUhUOk-unsplash.jpg') center/cover;
-}
+  <style>
 
-/* Heading with premium font */
-h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem, 5vw, 3.8rem);
-  letter-spacing:2px;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-/* Subtitle */
-p{
-  opacity:.85;
-  margin:10px 0 20px;
-  font-size:clamp(1rem, 2.5vw, 1.2rem);
-}
+    :root{
+      --bg:#0a0a0a;
+      --card:#111111;
+      --gold:#c9a66b;
+      --gold-light:#e4c48f;
+      --text:#ffffff;
+      --muted:#9f9f9f;
+      --line:rgba(255,255,255,.08);
+    }
 
-/* SVG responsive */
-#svgObj{
-  width:100%;
-  max-width:600px;
-  margin:20px auto;
-}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
 
-/* CTA */
-.btn{
-  padding:12px 28px;
-  background:#c59d5f;
-  border:none;
-  border-radius:30px;
-  color:#fff;
-  cursor:pointer;
-  transition:.3s;
-  font-weight:500;
-}
-.btn:hover{
-  transform:scale(1.08);
-  background:#b88c4a;
-}
+    .hero{
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+      background:
+      radial-gradient(circle at top left, rgba(201,166,107,.12), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(201,166,107,.08), transparent 30%),
+      #0a0a0a;
+    }
 
-/* countdown */
-.countdown{
-  display:flex;
-  gap:12px;
-  margin-top:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)),
+      url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1800&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      opacity:.45;
+      transform:scale(1.05);
+    }
 
-.box{
-  background:rgba(255,255,255,.12);
-  padding:10px 15px;
-  border-radius:10px;
-  min-width:70px;
-  backdrop-filter:blur(6px);
-}
+    .container{
+      width:100%;
+      max-width:1320px;
+      position:relative;
+      z-index:2;
+    }
 
-.box span{
-  font-size:clamp(1.3rem, 4vw, 2rem);
-  font-weight:600;
-}
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:70px;
+    }
 
-/* footer */
-footer{
-  text-align:center;
-  padding:15px;
-  background:#000;
-  font-size:.8rem;
-  font-family:'Inter',sans-serif;
-}
+    .logo{
+      font-family:'Playfair Display',serif;
+      font-size:32px;
+      font-weight:700;
+      letter-spacing:.5px;
+    }
 
-/* MOBILE */
-@media(max-width:600px){
-  .hero{
-    padding:30px 15px;
-  }
+    .logo span{
+      color:var(--gold);
+    }
 
-  .countdown{
-    gap:8px;
-  }
+    .nav-btn{
+      text-decoration:none;
+      color:#111;
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      padding:14px 24px;
+      border-radius:14px;
+      font-weight:600;
+      transition:.3s ease;
+    }
 
-  .box{
-    padding:8px 10px;
-  }
+    .nav-btn:hover{
+      transform:translateY(-2px);
+    }
 
-  .btn{
-    width:80%;
-    max-width:250px;
-  }
-}
-</style>
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(201,166,107,.25);
+      background:rgba(201,166,107,.08);
+      color:var(--gold);
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:28px;
+    }
+
+    h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(58px,8vw,105px);
+      line-height:.95;
+      margin-bottom:28px;
+      letter-spacing:-2px;
+    }
+
+    h1 span{
+      color:var(--gold);
+    }
+
+    .subtitle{
+      font-size:18px;
+      line-height:1.9;
+      color:var(--muted);
+      max-width:720px;
+      margin-bottom:40px;
+    }
+
+    .highlights{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-bottom:40px;
+    }
+
+    .highlight{
+      padding:22px;
+      border-radius:22px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      backdrop-filter:blur(10px);
+    }
+
+    .highlight h3{
+      color:var(--gold);
+      font-size:16px;
+      margin-bottom:8px;
+    }
+
+    .highlight p{
+      color:#bcbcbc;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .cta-group{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-bottom:36px;
+    }
+
+    .btn{
+      text-decoration:none;
+      padding:18px 30px;
+      border-radius:16px;
+      font-weight:600;
+      transition:.35s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      color:#111;
+      box-shadow:0 10px 30px rgba(201,166,107,.22);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--line);
+      color:#fff;
+      background:rgba(255,255,255,.03);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .email-box{
+      display:flex;
+      overflow:hidden;
+      border-radius:18px;
+      max-width:620px;
+      background:#fff;
+      margin-bottom:16px;
+    }
+
+    .email-box input{
+      flex:1;
+      border:none;
+      outline:none;
+      padding:22px;
+      font-size:15px;
+    }
+
+    .email-box button{
+      border:none;
+      background:#111;
+      color:#fff;
+      padding:0 30px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s ease;
+    }
+
+    .email-box button:hover{
+      background:var(--gold);
+      color:#111;
+    }
+
+    .small{
+      color:#8d8d8d;
+      font-size:14px;
+    }
+
+    .right-card{
+      position:relative;
+      border-radius:34px;
+      overflow:hidden;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      min-height:720px;
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
+    }
+
+    .right-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.72);
+    }
+
+    .floating-panel{
+      position:absolute;
+      left:30px;
+      right:30px;
+      bottom:30px;
+      padding:28px;
+      border-radius:28px;
+      background:rgba(0,0,0,.5);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(16px);
+    }
+
+    .floating-panel h2{
+      margin-bottom:14px;
+      font-size:28px;
+    }
+
+    .floating-panel p{
+      color:#cfcfcf;
+      line-height:1.8;
+      margin-bottom:24px;
+    }
+
+    .stats{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .stat{
+      flex:1;
+      min-width:120px;
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .stat h3{
+      color:var(--gold);
+      font-size:28px;
+      margin-bottom:6px;
+    }
+
+    .stat p{
+      color:#b9b9b9;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    @media(max-width:1100px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .right-card{
+        min-height:500px;
+      }
+
+      h1{
+        font-size:72px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        padding:24px;
+      }
+
+      .highlights{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:54px;
+      }
+
+      .email-box{
+        flex-direction:column;
+      }
+
+      .email-box button{
+        padding:20px;
+      }
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .right-card{
+        min-height:420px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
 <section class="hero">
-  <h1>Malnad Coffee House</h1>
-  <p>“From Malnad Estates to Exceptional Cafés”</p>
-  <h3>“Now Roasting — Launching Soon”</h3>
 
-  <object id="svgObj" type="image/svg+xml" data="img/3rTrA01.svg"></object>
+  <div class="container">
 
-  <div class="countdown">
-    <div class="box"><span id="d">00</span><br>Days</div>
-    <div class="box"><span id="h">00</span><br>Hours</div>
-    <div class="box"><span id="m">00</span><br>Min</div>
-    <div class="box"><span id="s">00</span><br>Sec</div>
+    <div class="navbar">
+
+      <div class="logo">
+        Malnad <span>Coffee House</span>
+      </div>
+
+      
+      <a
+  href="https://wa.me/9844330767?text=Hello%20Malnad%20Coffee%20House%2C%20I%20am%20interested%20in%20a%20business%20partnership."
+  class="nav-btn"
+  target="_blank"
+>
+  Become a Partner
+</a>
+
+    </div>
+
+    <div class="hero-grid">
+
+      <div class="left">
+
+        <div class="tag">
+          ✦ Premium B2B Coffee Supply • Launching Soon
+        </div>
+
+        <h1>
+          Coffee Built for <span>Hotels, Cafés & Businesses</span>
+        </h1>
+
+        <p class="subtitle">
+          Malnad Coffee House delivers premium Chikkamagaluru coffee
+          solutions for cafés, restaurants, hotels, offices, and retail partners.
+          Consistent quality, wholesale pricing, and reliable sourcing —
+          directly from the hills of Karnataka.
+        </p>
+
+        <div class="highlights">
+
+          <div class="highlight">
+            <h3>Wholesale Supply</h3>
+            <p>
+              Freshly roasted coffee beans and blends for commercial businesses.
+            </p>
+          </div>
+
+          <div class="highlight">
+            <h3>Private Labeling</h3>
+            <p>
+              Launch your own coffee brand with custom packaging solutions.
+            </p>
+          </div>
+
+          <div class="highlight">
+            <h3>Bulk Orders</h3>
+            <p>
+              Reliable logistics and scalable supply for growing businesses.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="cta-group">
+
+          <a
+  href="https://wa.me/9844330767?text=Hello%20Malnad%20Coffee%20House%2C%20I%20would%20like%20to%20request%20a%20partnership."
+  class="btn btn-primary"
+  target="_blank"
+>
+  Request Partnership →
+</a>
+        </div>
+
+        </form>
+
+        <div class="small">
+          Early partner onboarding for cafés, hotels & distributors now open.
+        </div>
+
+      </div>
+
+      <div class="right">
+
+        <div class="right-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop"
+            alt="Coffee Beans">
+
+          <div class="floating-panel">
+
+            <h2>Launching Soon</h2>
+
+            <p>
+              Building premium coffee partnerships across India with authentic
+              Malnad-origin coffee sourced from Chikkamagaluru estates.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                <h3>100%</h3>
+                <p>Arabica</p>
+              </div>
+
+              <div class="stat">
+                <h3>B2B</h3>
+                <p>Focused</p>
+              </div>
+
+              <div class="stat">
+                <h3>24/7</h3>
+                <p>Support</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
-
-<footer>
-  © 2026 Malnad Coffee House
-</footer>
-
-<script>
-// countdown
-// Set launch date: Year, Month (0-11), Day, Hour, Minute, Second
-const launch = new Date(2026, 4, 10, 17, 0, 0); // May 10, 5:00 PM
-
-setInterval(()=>{
-  const now = new Date().getTime();
-  const diff = launch - now;
-
-  if(diff <= 0){
-    document.getElementById('d').innerText = "00";
-    document.getElementById('h').innerText = "00";
-    document.getElementById('m').innerText = "00";
-    document.getElementById('s').innerText = "00";
-    return;
-  }
-
-  document.getElementById('d').innerText = Math.floor(diff/(1000*60*60*24));
-  document.getElementById('h').innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  document.getElementById('m').innerText = Math.floor((diff%(1000*60*60))/(1000*60));
-  document.getElementById('s').innerText = Math.floor((diff%(1000*60))/1000);
-
-},1000);
-
-
-// SVG animation
-const obj=document.getElementById('svgObj');
-
-obj.addEventListener('load',()=>{
-  const svgDoc=obj.contentDocument;
-
-  const circles=svgDoc.querySelectorAll('circle, ellipse');
-  circles.forEach((el)=>{
-    el.animate([
-      {transform:'translateY(0px)'},
-      {transform:'translateY(-4px)'},
-      {transform:'translateY(0px)'}
-    ],{
-      duration:1000+Math.random()*1000,
-      iterations:Infinity
-    });
-  });
-
-  const paths=svgDoc.querySelectorAll('path');
-  paths.forEach((p,i)=>{
-    p.animate([
-      {transform:'translateY(0px)'},
-      {transform:'translateY(-2px)'},
-      {transform:'translateY(0px)'}
-    ],{
-      duration:2000+i*200,
-      iterations:Infinity
-    });
-  });
-});
-</script>
 
 </body>
 </html>
