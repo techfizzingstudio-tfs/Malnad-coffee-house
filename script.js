@@ -143,11 +143,15 @@ observer.observe(statsSection);
    TESTIMONIAL AUTO SLIDER
 ========================= */
 
-/* OPTIONAL:
-   DUPLICATE TRACK CONTENT
-   FOR SMOOTH INFINITE LOOP
-*/
 
 const track = document.querySelector(".testimonial-track");
 
 track.innerHTML += track.innerHTML;
+
+
+
+
+
+
+
+
