@@ -4,12 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malnad Coffee House</title>
-    <link rel="icon" type="image/png" href="img/logo.jpeg">
+    <link rel="icon" type="image/png" href="img/logo.png">
      <link rel="stylesheet" href="style.css" />
      <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
      <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
 
+.quick-nav{
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: rgba(15,15,15,0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 60px;
+  z-index: 9999;
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  animation: floatBar 4s ease-in-out infinite;
+}
+
+/* FLOAT */
+
+@keyframes floatBar{
+  0%,100%{
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50%{
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+/* LINKS */
+
+.quick-nav a{
+  position: relative;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  padding: 10px 18px;
+  border-radius: 40px;
+  transition: 0.35s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* SHIMMER */
+
+.quick-nav a::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.quick-nav a:hover::before{
+  transform: translateX(100%);
+}
+
+/* HOVER */
+
+.quick-nav a:hover{
+  background: linear-gradient(135deg,#d4a017,#f7d774);
+  color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212,160,23,0.35);
+}
+
+/* ACTIVE */
+
+.quick-nav a.active{
+  background: linear-gradient(135deg,#d4a017,#f7d774);
+  color: #111;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .quick-nav{
+    width: calc(80% - 20px);
+    overflow-x: auto;
+    margin-left: -40px;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+
+  .quick-nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  .quick-nav a{
+    font-size: 12px;
+    padding: 9px 14px;
+    flex-shrink: 0;
+  }
+
+}
+
+</style>
 </head>
 <body>
 
@@ -43,6 +155,20 @@
 
   </div>
 </header>
+
+
+<!-- NAV -->
+
+<div class="quick-nav">
+
+  <a href="#horeca">HoReCa</a>
+
+   <a href="#domestic">Bulk Supply</a>
+
+  <a href="#export">Export</a>
+
+
+</div>
 
 <!-- =========================
      EXPLORE PRODUCTS SECTION
@@ -120,12 +246,12 @@
 
         <span>
           <strong>Minimum Order:</strong>
-          50 kg
+          5 Tonne
         </span>
 
       </div>
 
-      <a href="#"
+      <a href="#domestic"
          class="explore-btn">
 
         Enquire for Green Beans →
@@ -136,6 +262,67 @@
 
     <!-- PRODUCT 2 -->
 
+    <div class="explore-card reveal">
+
+  <h3>
+    Roasted Coffee Beans
+  </h3>
+
+  <p class="product-desc">
+    Freshly roasted coffee beans crafted for cafés,
+    restaurants, hotels and coffee businesses that
+    require consistent flavour, aroma and quality.
+    Roasted in small batches and tailored to your brew style.
+  </p>
+
+  <!-- DETAILS -->
+
+  <div class="product-info">
+
+    <span>
+      <strong>Roast Levels:</strong>
+      Light Roast, Medium Roast,
+      Dark Roast, Espresso Roast
+    </span>
+
+    <span>
+      <strong>Bean Options:</strong>
+      100% Arabica, 100% Robusta,
+      Signature Blends,
+      Custom Roast Profiles
+    </span>
+
+    <span>
+      <strong>Best For:</strong>
+      Espresso Machines,
+      French Press, Pour Over,
+      South Indian Filter Coffee
+    </span>
+
+    <span>
+      <strong>Packaging:</strong>
+      1kg Commercial Packs,
+      Bulk Bags,
+      Private Label Pouches
+    </span>
+
+    <span>
+      <strong>Minimum Order:</strong>
+      100 kg
+    </span>
+
+  </div>
+
+  <a href="#horeca"
+     class="explore-btn">
+
+    Enquire for Roasted Beans →
+
+  </a>
+
+</div>
+
+<!-- product 2-->
     <div class="explore-card reveal">
       <h3>
         Custom Roasted
@@ -172,12 +359,12 @@
 
         <span>
           <strong>Minimum Order:</strong>
-          25 kg per month
+          100 kg 
         </span>
 
       </div>
 
-      <a href="#"
+      <a href="#horeca"
          class="explore-btn">
 
         Request Custom Roast Profile →
@@ -219,12 +406,12 @@
 
         <span>
           <strong>Minimum Order:</strong>
-          25 kg per month
+          100 kg 
         </span>
 
       </div>
 
-      <a href="#"
+      <a href="#horeca"
          class="explore-btn">
 
         Enquire for Filter Coffee Supply →
@@ -267,12 +454,12 @@
 
         <span>
           <strong>Minimum Order:</strong>
-          50 kg
+          1 Tonne
         </span>
 
       </div>
 
-      <a href="#"
+      <a href="#domestic"
          class="explore-btn">
 
         Discuss Private Labeling →
@@ -501,13 +688,10 @@
 
 
 <!-- =========================
-     HORECA PARTNERS SECTION
-========================= -->
-<!-- =========================
      HORECA SECTION
 ========================= -->
 
-<section class="horeca-section">
+<section class="horeca-section" id="horeca">
 
   <!-- TOP -->
 
@@ -743,7 +927,7 @@
     <!-- GOOGLE FORM -->
 
     <iframe
-      src="YOUR-GOOGLE-FORM-LINK"
+      src="https://forms.gle/NxoJqStECT214NNMA"
       width="100%"
       height="850"
       frameborder="0"
@@ -763,7 +947,7 @@
      EXPORT SECTION
 ========================= -->
 
-<section class="export-section">
+<section class="export-section" id="export">
 
   <!-- TOP -->
 
@@ -898,7 +1082,7 @@
     </div>
 
     <iframe
-      src="YOUR-GOOGLE-FORM-LINK"
+      src="https://forms.gle/NxoJqStECT214NNMA"
       width="100%"
       height="850"
       frameborder="0"
@@ -917,7 +1101,7 @@
      DOMESTIC BULK SUPPLY
 ========================= -->
 
-<section class="domestic-section">
+<section class="domestic-section" id="domestic">
 
   <!-- TOP -->
 
@@ -1050,7 +1234,7 @@
     </div>
 
     <iframe
-      src="https://forms.gle/6aGYf4UojL7E4yjM7"
+      src="https://forms.gle/NxoJqStECT214NNMA"
       width="100%"
       height="850"
       frameborder="0"
@@ -1094,7 +1278,7 @@
 
         <a href="about.html">About</a>
         <a href="product.html">Products</a>
-        <a href="">Supply Chain</a>
+        <a href="product.html">Supply Chain</a>
         <a href="contact.html">Contact</a>
 
       </div>
@@ -1117,7 +1301,7 @@
         <h3>Contact</h3>
 
         <a href="#">sales@malnadcoffeehouse.com</a>
-        <a href="#">+91 9844330767</a>
+        <a href="#">+91 8977230767</a>
         <a href="#">Chikmagalur, karnataka, India.</a>
 
       </div>
