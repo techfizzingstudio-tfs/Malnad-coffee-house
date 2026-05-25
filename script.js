@@ -2,35 +2,64 @@ const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 const navbar = document.querySelector(".navbar");
 
-/* Toggle menu + X animation */
+/* MOBILE MENU */
 menuToggle.addEventListener("click", (e) => {
   e.stopPropagation();
+
   navMenu.classList.toggle("active");
   menuToggle.classList.toggle("active");
 });
 
-/* Prevent menu click from closing */
+/* DROPDOWN TOGGLE MOBILE */
+document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+
+  toggle.addEventListener("click", (e) => {
+
+    if (window.innerWidth <= 768) {
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const dropdown = toggle.closest(".dropdown");
+
+      document.querySelectorAll(".dropdown.open").forEach(item => {
+        if (item !== dropdown) {
+          item.classList.remove("open");
+        }
+      });
+
+      dropdown.classList.toggle("open");
+    }
+  });
+
+});
+
+/* PREVENT CLOSE */
 navMenu.addEventListener("click", (e) => {
   e.stopPropagation();
 });
 
-/* Close menu on outside click */
+/* CLOSE OUTSIDE */
 document.addEventListener("click", () => {
+
   navMenu.classList.remove("active");
   menuToggle.classList.remove("active");
+
+  document.querySelectorAll(".dropdown.open").forEach(item => {
+    item.classList.remove("open");
+  });
+
 });
 
-/* Scroll effect */
+/* SCROLL EFFECT */
 window.addEventListener("scroll", () => {
+
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
-});
 
-navMenu.addEventListener("click", (e) => {
-  e.stopPropagation();
 });
 
 
