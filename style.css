@@ -76,16 +76,18 @@
 }
 
 /* BRAND TITLE */
-.brand-text h1 {
+.brand-text .brand-heading {
   font-family: 'Junge', sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.3px;
   color: #2a1a14;
   line-height: 1;
   margin: 0;
   transition: all 0.3s ease;
-}
+} 
+
+
 
 /* TAGLINE */
 .brand-text p {
@@ -2082,7 +2084,7 @@
   margin-bottom:24px;
 }
 
-.premium-content h1{
+.premium-content h2{
   color:#f5eadb;
   font-size:64px;
   line-height:1.05;
@@ -2091,7 +2093,7 @@
   font-family: Georgia, serif;
 }
 
-.premium-content h1 span{
+.premium-content h2 span{
   color:#c8a56a;
   font-style:italic;
 }
