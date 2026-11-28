@@ -16,7 +16,7 @@ export const paths = [
   ["Our coffee", "/product"],
   ["Partnerships", "/Explore"],
   ["Our story", "/about"],
-  ["Journal", "/blog"],
+  ["Blogs", "/blog"],
 ];
 
 export function SiteLink({ href, ...props }) {
