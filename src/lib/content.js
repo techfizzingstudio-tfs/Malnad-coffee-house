@@ -24,8 +24,11 @@ export const readPost = createServerFn()
     setResponseHeader("Cache-Control", "no-store");
     const { entry, unavailable } = await post(data);
     if (!entry) return { entry: null, unavailable };
-    const { _id, title, summary, image, body } = entry;
-    return { entry: { _id, title, summary, image, body }, unavailable };
+    const { _id, title, summary, image, body, bodyFormat } = entry;
+    return {
+      entry: { _id, title, summary, image, body, bodyFormat },
+      unavailable,
+    };
   });
 export const readFaqs = createServerFn().handler(async () => {
   setResponseHeader("Cache-Control", "no-store");

@@ -12,6 +12,6 @@ Import the repository into Vercel with the TanStack Start preset. Set the follow
 
 Existing deployments using `MONGODB_URI` and `MONGODB_DB` can keep those names. With only `MONGODB_URI` set, the database name defaults to `malnad`.
 
-Open `/admin/`, enter the admin token and publish a blog post or FAQ. Using the same identifier replaces the complete entry. Article bodies use plain text with blank lines between paragraphs.
+Open `/admin/`, enter the admin token and publish a blog post or FAQ. Using the same identifier replaces the complete entry. Paste Markdown into the article field and expand **Preview Markdown** to check its formatting. Previously published plain-text articles retain their formatting.
 
 The journal, article and FAQ pages read MongoDB on each request. A saved entry appears on the next request. The rest of the site is pre-rendered. Bundled samples are available when a connection string is absent, and database entries with matching identifiers override those samples.

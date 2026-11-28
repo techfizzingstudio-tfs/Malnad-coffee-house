@@ -45,13 +45,16 @@ export async function POST({ request }) {
   const entry = Object.fromEntries(
     names.map((name) => [name, fields[name].trim()]),
   );
-  if (kind === "posts" && fields.image) {
-    if (
-      typeof fields.image !== "string" ||
-      !/^(https:\/\/|\/img\/)/.test(fields.image)
-    )
+  if (kind === "posts") {
+    // Leading spaces can define an indented Markdown code block.
+    entry.body = fields.body;
+    entry.bodyFormat = "markdown";
+  }
+  const image = typeof fields.image === "string" ? fields.image.trim() : "";
+  if (kind === "posts" && image) {
+    if (!/^(https:\/\/|\/img\/)/.test(image))
       return reply("Use an HTTPS image URL or /img/ path.", 400);
-    entry.image = fields.image;
+    entry.image = image;
   }
   try {
     const db = await database();
