@@ -1,0 +1,170 @@
+{
+  "horeca": {
+    "form": "https://forms.gle/9jMBHTT1RtoukMNs6",
+    "cards": [
+      {
+        "title": "Roasted Coffee Beans",
+        "description": "Freshly roasted coffee beans crafted for cafés, restaurants, hotels and coffee businesses that require consistent flavour, aroma and quality. Roasted in small batches and tailored to your brew style.",
+        "specs": [
+          "Roast Levels: Light Roast, Medium Roast, Dark Roast, Espresso Roast",
+          "Bean Options: 100% Arabica, 100% Robusta, Signature Blends, Custom Roast Profiles",
+          "Best For: Espresso Machines, French Press, Pour Over, South Indian Filter Coffee",
+          "Packaging: 1kg Commercial Packs, Bulk Bags, Private Label Pouches",
+          "Minimum Order: 100 kg"
+        ]
+      },
+      {
+        "title": "Custom Roasted Coffee Beans",
+        "description": "For cafés, restaurants and businesses that want a ready-to-brew product. We roast to your profile or develop one together based on your brewing method.",
+        "specs": [
+          "Roast Levels: Light, Medium, Dark, Espresso",
+          "Blend Options: Pure Arabica, Pure Robusta, Arabica-Robusta Blend, Custom Ratio",
+          "Packaging: Bulk bags or private label retail pouches",
+          "Minimum Order: 100 kg"
+        ]
+      },
+      {
+        "title": "South Indian Filter Coffee Powder",
+        "description": "Traditional South Indian filter coffee blends crafted for commercial use with varying chicory ratios to suit regional taste preferences.",
+        "specs": [
+          "Blend Options: 100% Coffee (No Chicory), 80:20, 70:30, 60:40, Custom Ratio",
+          "Pack Formats: 500g, 1kg, 5kg, Custom Bulk Packing",
+          "Minimum Order: 100 kg"
+        ]
+      }
+    ],
+    "steps": [
+      "Fill the onboarding form",
+      "Team call within 48 hours",
+      "Sample pack delivery",
+      "Approve roast profile",
+      "Supply begins with support"
+    ],
+    "faqs": [
+      [
+        "Do you supply coffee to cafés, hotels and restaurants?",
+        "Yes. We supply roasted coffee beans, espresso blends and South Indian filter coffee blends to cafés, hotels, restaurants and QSR chains, with consistent batch-to-batch quality."
+      ],
+      [
+        "What is the minimum order quantity?",
+        "The minimum order is 100 kg. Volume discounts are available on orders of 500 kg and 1,000 kg and above."
+      ],
+      [
+        "How do I get a quote for a bulk order?",
+        "Fill the enquiry form with the product and quantity you need, call or WhatsApp +91 89772 30767, or email sales@malnadcoffeehouse.com."
+      ],
+      [
+        "Can you create a custom roast or private label?",
+        "Yes. We offer light, medium, medium-dark and dark roast profiles, custom blend ratios, and private label and white-label manufacturing."
+      ]
+    ]
+  },
+  "bulk-supply": {
+    "form": "https://forms.gle/zDt3rBjZTF3YXGZY6",
+    "cards": [
+      {
+        "title": "Green Coffee Beans (Raw / Unprocessed)",
+        "description": "Premium raw coffee beans supplied for roasters, processors and commercial buyers looking for direct sourcing and large-volume supply.",
+        "specs": [
+          "Available From: Chikmagalur, Coorg, Wayanad, Araku Valley, Shevaroy Hills",
+          "Varieties: Arabica, Robusta",
+          "Processing: Washed, Natural, Honey Process, Monsooned Malabar",
+          "Grades: AAA, AA, A, B, C, PB (Peaberry), AB, Commercial Grades",
+          "Minimum Order: 5 Tonne"
+        ]
+      },
+      {
+        "title": "Bulk Roasted Coffee Beans",
+        "description": "Freshly roasted commercial coffee beans developed for cafés, distributors, retailers and institutional buyers requiring consistency at scale.",
+        "specs": [
+          "Roast Profiles: Light Roast, Medium Roast, Dark Roast, Espresso Roast",
+          "Blend Options: 100% Arabica, 100% Robusta, Signature Commercial Blends",
+          "Packaging: 1kg, 5kg, 25kg Commercial Packs",
+          "Best For: Cafés, Retail Chains, Distributors & Hotels",
+          "Minimum Order: 2 Tonne"
+        ]
+      },
+      {
+        "title": "Private Label & Custom Packaging",
+        "description": "Launch your own coffee brand with custom roasting, grinding, packaging and private label support tailored for commercial markets.",
+        "specs": [
+          "Options: Custom Label Design, Stand-Up Pouches, Valve Bags, Bulk Sacks",
+          "Ideal For: Café Chains, Hotels, Retail Brands, Regional Distributors",
+          "Formats: Whole Beans, Ground Coffee, Filter Coffee Powder",
+          "Minimum Order: 1 Tonne"
+        ]
+      }
+    ],
+    "steps": [
+      "Submit your bulk requirement",
+      "Discuss quantity & pricing",
+      "Receive sample approval",
+      "Confirm commercial agreement",
+      "Bulk dispatch & regular supply"
+    ],
+    "faqs": [
+      [
+        "What is the minimum order quantity?",
+        "The minimum order is 100 kg. Volume discounts are available on orders of 500 kg and 1,000 kg and above."
+      ],
+      [
+        "What is the minimum order for green coffee beans?",
+        "The minimum order for unroasted green coffee beans is 5 tonnes. Grade and screen size can be chosen to suit your requirement."
+      ],
+      [
+        "Can you create a custom roast or private label?",
+        "Yes. We offer light, medium, medium-dark and dark roast profiles, custom blend ratios, and private label and white-label manufacturing."
+      ],
+      [
+        "Do you deliver across India?",
+        "Yes. Malnad Coffee House supplies businesses across India from its roasting unit in Chikmagalur, Karnataka."
+      ]
+    ]
+  },
+  "export": {
+    "form": "https://forms.gle/sTtB4tAgGBvCyr5q8",
+    "cards": [
+      {
+        "title": "Export Green Coffee Beans",
+        "description": "Premium Arabica and Robusta coffee beans sourced from Chikmagalur plantations and prepared for international commercial supply.",
+        "specs": [
+          "Bean Types: Arabica, Robusta, Peaberry & Plantation Coffee",
+          "Available Grades: AAA, AA, A, AB, PB & Commercial Grades",
+          "Packaging: Jute Bags, Vacuum Packs, Export Containers",
+          "Best For: Roasters, Importers, Global Coffee Brands",
+          "Minimum Order: 500 kg"
+        ]
+      },
+      {
+        "title": "Export Roasted Coffee Beans",
+        "description": "Freshly roasted coffee beans with custom roast profiles tailored for international cafés, retail brands and distributors.",
+        "specs": [
+          "Roast Profiles: Light, Medium, Dark & Espresso Roast",
+          "Blend Options: Pure Arabica, Pure Robusta, Signature Blends",
+          "Packaging: 250g, 500g, 1kg & Bulk Packs",
+          "Private Label: Available For Global Brands",
+          "Minimum Order: 300 kg"
+        ]
+      },
+      {
+        "title": "Private Label Export",
+        "description": "Launch your coffee brand with custom blends, packaging, branding and international-ready export support.",
+        "specs": [
+          "Services: Custom Branding, Packaging & Label Design",
+          "Formats: Ground Coffee, Whole Beans, Filter Coffee Powder",
+          "Packaging Sizes: Retail Pouches, Bulk Bags, Export Cartons",
+          "Best For: Retail Chains, Importers & Startups",
+          "Minimum Order: 500 kg"
+        ]
+      }
+    ],
+    "steps": [
+      "Share your import requirements",
+      "Discuss grades, volume & pricing",
+      "Receive export coffee samples",
+      "Finalize agreement & packaging",
+      "Export dispatch & global shipping"
+    ],
+    "faqs": []
+  }
+}

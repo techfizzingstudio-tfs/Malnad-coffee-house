@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "coffee-supply-chains",
+    "body": "A batch of coffee passes through picking, processing, drying and milling before it reaches the roaster. Each stage influences the cup.\n\nFor caf\u00e9 buyers, tracking the origin and roast date of each batch makes it easier to compare samples and plan orders.",
+    "title": "Coffee Supply Chains And Global Trends In 2026",
+    "summary": "Explore sustainability, sourcing and premium cafe growth.",
+    "image": "/img/where-coffee-grows03.webp"
+  },
+  {
+    "_id": "pour-over-coffee",
+    "body": "Start with freshly ground coffee and a rinsed filter. Wet the grounds evenly and let the initial bubbles settle before continuing.\n\nPour slowly in small circles. Taste the cup before changing the recipe. If it tastes thin and sour, try a slightly finer grind next time.",
+    "title": "Perfect Pour Over Techniques For Specialty Coffee",
+    "summary": "Learn extraction control, grind size balancing and bloom timing.",
+    "image": "/img/coffee-maker-machine.png"
+  },
+  {
+    "_id": "roast-profiles",
+    "body": "During roasting, coffee loses moisture and develops aromas. Lighter roasts often highlight acidity, while deeper roasts bring out toasted and bittersweet notes.\n\nCompare two roasts with the same brewing method to see which you prefer.",
+    "title": "Understanding Roast Profiles For Better Flavor",
+    "summary": "Master caramelization, acidity and sweetness during roasting.",
+    "image": "/img/coffee-roasting-process.jpeg"
+  }
+]

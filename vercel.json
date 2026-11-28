@@ -1,0 +1,55 @@
+{
+  "framework": "tanstack-start",
+  "redirects": [
+    {
+      "source": "/export.html",
+      "destination": "/export",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/home.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/horeca.html",
+      "destination": "/horeca",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/bulk-supply.html",
+      "destination": "/bulk-supply",
+      "permanent": true
+    },
+    {
+      "source": "/Explore.html",
+      "destination": "/Explore",
+      "permanent": true
+    },
+    {
+      "source": "/faqs.html",
+      "destination": "/faqs",
+      "permanent": true
+    },
+    {
+      "source": "/product.html",
+      "destination": "/product",
+      "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    }
+  ]
+}

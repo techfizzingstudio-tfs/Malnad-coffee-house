@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Green Coffee Beans",
+    "image": "/img/wholesale-green-coffee-beans-india.jfif",
+    "description": "Export-grade Arabica & Robusta sourced from Chikmagalur estates. Available across AAA, AA, PB, AB & commercial grades.",
+    "links": [
+      ["/export/", "EXPORT →"],
+      ["/bulk-supply/", "BULK ORDER →"]
+    ]
+  },
+  {
+    "title": "Roasted Coffee Beans",
+    "image": "/img/roasted-arabica-robusta-coffee-beans.jfif",
+    "description": "Freshly roasted Arabica & Robusta crafted for cafés, hotels, and retail brands. Available in espresso, medium, dark roast, and custom private-label blends.",
+    "links": [
+      ["/horeca/", "HORECA →"],
+      ["/bulk-supply/", "BULK ORDER →"]
+    ]
+  },
+  {
+    "title": "Custom Roasted Beans",
+    "image": "/img/custom-roasted-coffee-beans.jfif",
+    "description": "Tailored roast profiling for cafés, hotels, QSR chains, and specialty coffee businesses.",
+    "links": [
+      ["/horeca/", "HORECA →"],
+      ["/bulk-supply/", "BULK ORDER →"]
+    ]
+  },
+  {
+    "title": "Filter Coffee Powder",
+    "image": "/img/south-indian-filter-coffee-powder.jfif",
+    "description": "Authentic South Indian filter coffee blends with customizable chicory ratios and bulk packaging options.",
+    "links": [
+      ["/horeca/", "HORECA →"],
+      ["/bulk-supply/", "BULK ORDER →"]
+    ]
+  },
+  {
+    "title": "Private Label Blends",
+    "image": "/img/private-label-coffee-packaging.png",
+    "description": "Launch your own coffee brand with custom blending, packaging, compliance, and scalable supply support.",
+    "links": [
+      ["/export/", "EXPORT →"],
+      ["/bulk-supply/", "BULK ORDER →"]
+    ]
+  },
+  {
+    "title": "Export Green Coffee",
+    "image": "/img/export-quality-green-coffee-beans.png",
+    "description": "Bulk export-quality green coffee beans with global shipping support, quality grading, and customized sourcing for international buyers.",
+    "links": [["https://forms.gle/sTtB4tAgGBvCyr5q8", "Send Enquiry →"]]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "roast": "Light Roast",
+    "name": "Floral & Fruity",
+    "description": "Bright acidity with elegant fruit notes designed for specialty caf\u00e9s and pour-over bars.",
+    "values": [
+      ["Body", "45"],
+      ["Acidity", "90"],
+      ["Sweetness", "70"]
+    ]
+  },
+  {
+    "roast": "Medium Roast",
+    "name": "Balanced Espresso",
+    "description": "Smooth chocolate body with caramel finish built for caf\u00e9s and restaurant chains.",
+    "values": [
+      ["Body", "75"],
+      ["Acidity", "60"],
+      ["Sweetness", "85"]
+    ]
+  },
+  {
+    "roast": "Dark Roast",
+    "name": "Heavy Crema Blend",
+    "description": "Strong body and dense crema profile optimized for high-volume espresso service.",
+    "values": [
+      ["Body", "95"],
+      ["Acidity", "35"],
+      ["Sweetness", "60"]
+    ]
+  }
+]

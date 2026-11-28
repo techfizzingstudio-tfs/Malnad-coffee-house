@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Mountain Reserve",
+    "description": "Smooth floral aroma with cocoa finish designed for specialty caf\u00e9s.",
+    "image": "/img/arabica-coffee-mountain-reserve.jpg",
+    "specs": ["Roast \u00b7 Medium", "Notes \u00b7 Cocoa"]
+  },
+  {
+    "title": "Dark Estate Blend",
+    "description": "Dense crema and bold body crafted for commercial espresso machines.",
+    "image": "/img/robusta-coffee-dark-estate-blend.jpg",
+    "specs": ["Roast \u00b7 Dark", "Notes \u00b7 Chocolate"]
+  },
+  {
+    "title": "Custom Retail Packs",
+    "description": "End-to-end private label roasting, packaging and fulfillment support.",
+    "image": "/img/premium-arabica-coffee-beans.jpg",
+    "specs": ["MOQ \u00b7 500kg", "Support \u00b7 Full Stack"]
+  }
+]
